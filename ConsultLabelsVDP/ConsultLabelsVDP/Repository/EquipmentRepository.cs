@@ -11,7 +11,9 @@ namespace ConsultLabelsVDP.Repository
 
         public async Task AddEquipment(Equipment equipment)
         {
-
+            //Equipment equip = equipment; //no c# o parâmetro já tem referência direta para o objeto original
+            _equipments.Add(equipment);
+            await Task.CompletedTask; //como é async precisamos retornar  
         }
 
         public async Task<Equipment> GetByCodigo(string Codigo)
